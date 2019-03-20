@@ -58,7 +58,6 @@ module.exports = mongoose.model('Component', componentSchema);
 //     'price': 10,
 //     'base_part': false,
 //     'category': 'Grip',
-//     'attachments': null,
 //     'image': '/images/grip/PTS_MVG_Tan_Left.png',
 //     'imageDetails': {
 //         'width': 229,

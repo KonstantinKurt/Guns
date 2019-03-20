@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 const Component = require('../models/Component');
+const fs = require("fs");
 mongoose.connect(
-  `mongodb://localhost:27017/guns`,
-  {
-    useNewUrlParser: true
-  },
-  function(err) {
-    if (err) throw err;
-    console.log("Successfully connected");
-  }
+    `mongodb://localhost:27017/Guns`, {
+        useNewUrlParser: true
+    },
+    function(err) {
+        if (err) throw err;
+        console.log("Successfully connected");
+    }
 );
 let components = [
   new Component({
@@ -25,6 +25,19 @@ let components = [
     }
   }),
 ];
+
+// let components;
+// fs.readFile("components.json", "utf8", function(err, data) {
+//     if (err) {
+//         console.error(err);
+//     }
+    
+//     let parsedData = JSON.parse(data);
+//     console.log(typeof(parsedData));
+//     console.log(components);
+
+// });
+
 let done = 0;
 for (let i = 0; i < components.length; i++) {
   components[i].save(function(err, result) {
@@ -36,5 +49,5 @@ for (let i = 0; i < components.length; i++) {
 }
 function exit() {
   mongoose.disconnect();
-  console.log("Ok");
+  console.log("Db updated");
 }

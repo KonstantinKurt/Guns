@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const recieverSchema = new Schema({
+    _id: {
+       type: mongoose.Schema.Types.ObjectId,
+    },
     name: {
         type: String,
         default: "recivier",
@@ -9,6 +12,10 @@ const recieverSchema = new Schema({
     price: {
         type: Number,
         default: 0,
+    },
+    base_part: {
+        type: Boolean,
+        default: true,
     },
     imageUrl: {
         type: String,
@@ -30,66 +37,68 @@ const recieverSchema = new Schema({
         },
 
     },
-    tripod: {
-        
-        top: {
-            type: Number,
-            required: true,
-        },
-        left: {
-            type: Number,
-            required: true,
-        },
+    attachments: {
+        tripod: {
 
-    },
-    grip: {
-        top: {
-            type: Number,
-            required: true,
+            top: {
+                type: Number,
+                required: true,
+            },
+            left: {
+                type: Number,
+                required: true,
+            },
+
         },
-        left: {
-            type: Number,
-            required: true,
+        grip: {
+            top: {
+                type: Number,
+                required: true,
+            },
+            left: {
+                type: Number,
+                required: true,
+            },
         },
-    },
-    suppressor: {
-        top: {
-            type: Number,
-            required: true,
+        suppressor: {
+            top: {
+                type: Number,
+                required: true,
+            },
+            left: {
+                type: Number,
+                required: true,
+            },
         },
-        left: {
-            type: Number,
-            required: true,
+        stock: {
+            top: {
+                type: Number,
+                required: true,
+            },
+            left: {
+                type: Number,
+                required: true,
+            },
         },
-    },
-    stock: {
-        top: {
-            type: Number,
-            required: true,
+        scope: {
+            top: {
+                type: Number,
+                required: true,
+            },
+            left: {
+                type: Number,
+                required: true,
+            },
         },
-        left: {
-            type: Number,
-            required: true,
-        },
-    },
-    scope: {
-        top: {
-            type: Number,
-            required: true,
-        },
-        left: {
-            type: Number,
-            required: true,
-        },
-    },
-    laser: {
-        top: {
-            type: Number,
-            required: true,
-        },
-        left: {
-            type: Number,
-            required: true,
+        laser: {
+            top: {
+                type: Number,
+                required: true,
+            },
+            left: {
+                type: Number,
+                required: true,
+            },
         },
     },
 
